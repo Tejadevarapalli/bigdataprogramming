@@ -1,0 +1,66 @@
+
+ case 1:
+
+1) create table petrol (distributer_idSTRING,distributer_nameSTRING,amt_INSTRING,amy_OUTSTRING,vol_ININT,vol_OUTINT,yearINT)  row  format delimited fields terminated by ‘,’ stored as textfile;
+
+ 
+
+2) load data local inpath‘’  into table petrol;
+
+ 
+
+3) sELECT distributer_name,SUM(vol_OUT)  FROM  petrol GROUP  BY distributer_name;
+
+ 
+
+3) SELECT distributer_id,vol_OUTFROM petrol order by vol_OUTdesclimit 10;
+
+ 
+
+4) SELECT distributer_id,vol_OUTFROM petrol order by vol_OUTlimit 10;
+
+ 
+
+ 
+Use case 1:
+
+
+select distributer_name, Year, (vol_in-vol_out) diff from petrol where (vol_in-vol_out)>500
+
+
+
+case 2:
+
+
+1) create table olympic(atheleteSTRING,ageINT,countrySTRING,yearSTRING,closingSTRING,sportSTRING,goldINT,silverINT,bronzeINT,totalINT) row format delimited fields terminated by ‘\t’ stored as textfile;
+
+2) load data local inpath‘/home/acadgild/Downloads/olympic_data.csv’ into table olympic;
+
+3)  select country,SUM(total) from olympicwhere sport = “Swimming” GROUP BY country;
+
+4) select year,SUM(total) from olympicwhere country = “India” GROUP BY year
+
+
+5) select country,SUM(total) from olympicGROUP BY country;
+
+
+6) select country,SUM(gold) from olympicGROUP BY country;
+
+
+use case 2:
+
+select Country, year from sports where Total_medals>0 and sport='Shooting' order by year
+ 
+Bonus point queries
+
+create table olympic1  as select athelete,
+age,country,year,closing,sport from olympic;
+
+create table olympic2 as select athelete,
+year,gold,silver,bronze,total from olympic;
+
+select a.athelete,a.year,age,country,
+total from
+olympic1 a join olympic2 b on
+a.athelete=b.athelete and a.year=b.year
+where country='United States'
