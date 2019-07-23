@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MachineLearning.iml" filepath="$PROJECT_DIR$/.idea/modules/MachineLearning.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MachineLearning-build.iml" filepath="$PROJECT_DIR$/.idea/modules/MachineLearning-build.iml" />
+      <module fileurl="file://F:/.idea/modules/iot.iml" filepath="F:/.idea/modules/iot.iml" />
+      <module fileurl="file://F:/.idea/modules/iot-build.iml" filepath="F:/.idea/modules/iot-build.iml" />
+    </modules>
+  </component>
+</project>
